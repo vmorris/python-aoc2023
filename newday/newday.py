@@ -12,7 +12,7 @@ def newday(day):
     if len(day) == 1:
         day = f"0{day}"
     click.echo(f"Creating new environment for day {day} ...")
-    solution_path = os.path.abspath(f"aoc2022/day{day}")
+    solution_path = os.path.abspath(f"aoc2023/day{day}")
     test_path = os.path.abspath(f"tests")
 
     # render from templates
