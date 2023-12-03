@@ -6,12 +6,10 @@ input_data = get_input("tests/testinput.day01")
 
 
 def test_solve_part1():
-    expected = 24000
+    expected = 142
     actual = solution.solve_part1(input_data)
     assert expected == actual
 
 
 def test_solve_part2():
-    expected = 45000
-    actual = solution.solve_part2(input_data)
-    assert expected == actual
+    pass
