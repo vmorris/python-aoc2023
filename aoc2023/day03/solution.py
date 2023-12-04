@@ -14,7 +14,7 @@ class Point:
 
 
 def symbol_adjacent(schematic, symbols, part_num, location:Point):
-    print(f"{part_num}, {location}")
+    #print(f"{part_num}, {location}")
     part_num_length = len(part_num)
     prev_row = location.y-1
     next_row = location.y+1
@@ -113,7 +113,7 @@ def solve_part1(schematic):
     result = 0
     for part_num, location in parts:
         symbol = symbol_adjacent(schematic, symbols, part_num, location)
-        print(f"part: {part_num}; adjacent_symbol: {symbol}")
+        #print(f"part: {part_num}; adjacent_symbol: {symbol}")
         if symbol:
             result += int(part_num)
     return result
@@ -146,7 +146,7 @@ def is_gear(schematic, parts, gear_loc):
             for i in range(-1, 2):
                 for j in range(-1, 2):
                     if Point(gear_loc.x+i, gear_loc.y+j) in part.space:
-                        print(f"found adjacent part: {part}")
+                        # print(f"found adjacent part: {part}")
                         if part not in adjacent_parts:
                             adjacent_parts.append(part)
                         # todo: this may not be enough here.. might need to compare part space
@@ -175,10 +175,8 @@ def solve_part2(schematic):
         for x, char in enumerate(row):
             if char == "*":
                 gear_loc = Point(x, y)
-                print(f"potential gear at {gear_loc}")
+                #print(f"potential gear at {gear_loc}")
                 adjacent_parts = is_gear(schematic, parts, gear_loc)
-                #if len(adjacent_parts) > 2:
-                #    exit(adjacent_parts)
                 if adjacent_parts:
                     ratio = 1
                     for part in adjacent_parts:
