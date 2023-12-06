@@ -29,6 +29,7 @@ class Card:
         for number in self.my_numbers:
             if number in winning_numbers:
                 self.score += 1
+
     def __repr__(self):
         return f"<Card {self.card_number} |score: {self.score}|count: {self.count}>"
 
@@ -45,13 +46,13 @@ def solve_part2(cards):
         original_cards.append(_card)
 
     for card in original_cards:
-        #print(f"- card {card.card_number}")
-        for count in range(card.count):
-            #print(f" - count {count}")
+        # print(f"- card {card.card_number}")
+        for _ in range(card.count):
+            # print(f" - count {count}")
             for i in range(0, card.score):
                 try:
-                    #print(f"  - adding 1 to {card.card_number+i}")
-                    original_cards[card.card_number+i].count += 1
+                    # print(f"  - adding 1 to {card.card_number+i}")
+                    original_cards[card.card_number + i].count += 1
                 except IndexError:
                     pass
     tally = 0
