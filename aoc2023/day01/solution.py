@@ -7,7 +7,7 @@ def solve_part1(entries):
         digits = "".join(list(filter(lambda i: i.isdigit(), code)))
         first = digits[0]
         last = digits[-1]
-        final = "".join([first,last])
+        final = "".join([first, last])
         result += int(final)
     return result
 
@@ -15,8 +15,8 @@ def solve_part1(entries):
 def solve_part2(entries):
     new_codes = []
     for code in entries:
-        new_codes.append(code
-            .replace("zero", "z0o")
+        new_codes.append(
+            code.replace("zero", "z0o")
             .replace("one", "o1e")
             .replace("two", "t2o")
             .replace("three", "t3e")
@@ -28,10 +28,9 @@ def solve_part2(entries):
             .replace("nine", "n9e")
         )
     return solve_part1(new_codes)
-    
-        
+
 
 if __name__ == "__main__":  # pragma: no cover
     entries = get_input("aoc2023/day01/input")
-#    print(solve_part1(entries))
+    #    print(solve_part1(entries))
     print(solve_part2(entries))

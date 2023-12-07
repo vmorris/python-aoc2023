@@ -5,6 +5,7 @@ dependencies = [
     "Jinja2",
     "Click",
     "anytree",
+    "sortedcontainers",
     "numpy",
 ]
 tests_dependencies = [

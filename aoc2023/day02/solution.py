@@ -6,6 +6,7 @@ CUBES = {
     "blue": 14,
 }
 
+
 def solve_part1(entries):
     game_sum = 0
     for game in entries:
@@ -22,6 +23,7 @@ def solve_part1(entries):
         if not impossible_game:
             game_sum += int(game_no)
     return game_sum
+
 
 def solve_part2(entries):
     game_sum = 0
@@ -48,7 +50,7 @@ def solve_part2(entries):
         game_power = min_red * min_green * min_blue
         game_sum += game_power
     return game_sum
-            
+
 
 if __name__ == "__main__":  # pragma: no cover
     entries = get_input("aoc2023/day02/input")
