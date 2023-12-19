@@ -63,7 +63,7 @@ def solve_part1(entries):
     current_node = "AAA"
     steps = 0
     for d in directions:
-        print(current_node)
+        #print(current_node)
         current_node = traverse_edge(digraph, current_node, d)
         steps += 1
         if current_node == "ZZZ":
@@ -90,7 +90,7 @@ def solve_part2(entries):
         current_nodes = new_nodes
         for idx, node in enumerate(current_nodes):
             if node.endswith("Z"):
-                print(f"node: {node}, index: {idx}, steps: {steps}")
+                #print(f"node: {node}, index: {idx}, steps: {steps}")
                 current_nodes.pop(idx)
                 node_steps.append(steps)
     return math.lcm(*node_steps)
@@ -98,5 +98,6 @@ def solve_part2(entries):
 
 if __name__ == "__main__":  # pragma: no cover
     entries = get_input("aoc2023/day08/input")
-    #print(solve_part1(entries))
+    print(solve_part1(entries))
+    entries = get_input("aoc2023/day08/input")
     print(solve_part2(entries))
