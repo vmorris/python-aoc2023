@@ -1,12 +1,14 @@
-import setuptools
+from setuptools import setup, find_packages
 
 dependencies = [
     "wheel",
     "Jinja2",
     "Click",
-    "anytree",
+    #"anytree",
     "sortedcontainers",
     "numpy",
+    "networkx",
+    "matplotlib",
 ]
 tests_dependencies = [
     "pytest",
@@ -14,13 +16,13 @@ tests_dependencies = [
 ]
 extras = {"test": tests_dependencies}
 
-setuptools.setup(
+setup(
     name="aoc2023",
     version="0.0.1",
     description="Advent of Code 2023 Solutions",
     author="Vance Morris",
     author_email="vmorris@us.ibm.com",
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     install_requires=dependencies,
     tests_require=tests_dependencies,
     extras_require=extras,
